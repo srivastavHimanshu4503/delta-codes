@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 10 Assignment</title>
+    <style>
+        header {
+            text-align: center;
+        }
+
+        header p {
+            font-size: xx-large;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-rows: repeat(12, 1fr);
+            grid-template-columns: repeat(12, 1fr);
+            gap: 10px;
+            height: 100vh;
+        }
+
+        .box {
+            font-size: 1.5rem;
+            background-color: pink;
+        }
+
+        .header {
+            grid-column: 1 / span 12;
+        }
+
+        .sidebar {
+            grid-row: 2 / span 10;
+            grid-column: 1 / span 3;
+        }
+        
+        .navigation {
+            grid-column: 4 / span 6;
+        }
+        
+        .ads {
+            grid-row: 2 / span 10;
+            grid-column: 10 / span 3;
+        }
+
+        .main {
+            grid-row: 3 / span 9;
+            grid-column: 4 / span 6;
+        }
+
+        .footer {
+            grid-column: 1 / span 12;
+        }
+
+        @media (max-width: 720px) {
+            .navigation {
+                grid-row: 2;
+                grid-column: 1 / span 12;
+            }
+
+            .sidebar {
+                grid-row: 3 / span 9;
+                grid-column: 1 / span 3;
+            }
+
+            .main {
+                grid-row: 3 / span 9;
+                grid-column: 4 / span 9;
+            }
+
+            .ads {
+                grid-row: 12;
+                grid-column: 1 / span 3;
+            }
+
+            .footer {
+                grid-column: 4 / span 9;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CSS (Part 6)</h1>
+        <p>Practice Question</p>
+    </header>
+
+    <main>
+        <section id="first">
+            <p>Qs1. Create the following layout using CSS Grid :</p>
+            <div class="grid">
+                <div class="box header">header(1row, 12column)</div>
+                <div class="box sidebar">sidebar(10row, 3column)</div>
+                <div class="box navigation">navigation (1row, 6column)</div>
+                <div class="box ads">ads (10row, 3column)</div>
+                <div class="box main">main (9row, 6column)</div>
+                <div class="box footer">footer (1row, 12column)</div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice DOM</title>
+</head>
+<body>
+    <div class="container"></div>
+    <script>
+        let box = document.querySelector('.container');
+        box.style.border = "2px solid black";
+        
+        box.style.height = "70vh";
+
+        let para = document.createElement('p');
+        para.innerText = "Hey I'm red!";
+        para.style.color = "red";
+        
+        let h3 = document.createElement('h3');
+        h3.innerText = "I'm a blue h3!";
+        h3.style.color = "blue";
+
+        let div = document.createElement('div');
+        div.style.border = "2px solid black";
+        div.style.backgroundColor = "pink";
+
+        let h1InsideContainer = document.createElement('h1');
+        h1InsideContainer.innerText = "I'm in a div";
+        
+        let newPara = document.createElement('p');
+        newPara.innerText = "ME TOO!";
+        
+        box.append(para);
+        box.append(h3);
+        box.append(div);
+        div.append(h1InsideContainer);
+        div.append(newPara);
+    </script>
+    <script src="day22Practice.js"></script>
+</body>
+</html>

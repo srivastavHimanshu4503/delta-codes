@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="shortcut icon" href="assessts/logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <div class="spotify-logo">
+                    <a href="#">
+                        <svg role="img" viewBox="0 0 24 24" class="e-9960-logo e-9960-baseline" aria-label="Spotify"
+                            fill="white" aria-hidden="false" height="32" data-encore-id="logoSpotify">
+                            <title>Spotify</title>
+                            <path
+                                d="M13.427.01C6.805-.253 1.224 4.902.961 11.524.698 18.147 5.853 23.728 12.476 23.99c6.622.263 12.203-4.892 12.466-11.514S20.049.272 13.427.01m5.066 17.579a.717.717 0 0 1-.977.268 14.4 14.4 0 0 0-5.138-1.747 14.4 14.4 0 0 0-5.42.263.717.717 0 0 1-.338-1.392c1.95-.474 3.955-.571 5.958-.29 2.003.282 3.903.928 5.647 1.92a.717.717 0 0 1 .268.978m1.577-3.15a.93.93 0 0 1-1.262.376 17.7 17.7 0 0 0-5.972-1.96 17.7 17.7 0 0 0-6.281.238.93.93 0 0 1-1.11-.71.93.93 0 0 1 .71-1.11 19.5 19.5 0 0 1 6.94-.262 19.5 19.5 0 0 1 6.599 2.165c.452.245.62.81.376 1.263m1.748-3.551a1.147 1.147 0 0 1-1.546.488 21.4 21.4 0 0 0-6.918-2.208 21.4 21.4 0 0 0-7.259.215 1.146 1.146 0 0 1-.456-2.246 23.7 23.7 0 0 1 8.034-.24 23.7 23.7 0 0 1 7.657 2.445c.561.292.78.984.488 1.546m13.612-.036-.832-.247c-1.67-.495-2.14-.681-2.14-1.353 0-.637.708-1.327 2.264-1.327 1.539 0 2.839.752 3.51 1.31.116.096.24.052.24-.098V6.935c0-.097-.027-.15-.098-.203-.83-.62-2.272-1.07-3.723-1.07-2.953 0-4.722 1.68-4.722 3.59 0 2.157 1.371 2.91 3.626 3.546l.973.274c1.689.478 1.998.902 1.998 1.556 0 1.097-.831 1.433-2.07 1.433-1.556 0-3.457-.911-4.35-2.025-.08-.098-.177-.053-.177.062v2.423c0 .097.01.141.08.22.743.814 2.52 1.53 4.59 1.53 2.546 0 4.456-1.485 4.456-3.784 0-1.787-1.052-2.865-3.625-3.635m10.107-1.76c-1.68 0-2.653 1.026-3.219 2.052V9.376c0-.08-.044-.124-.124-.124h-2.22c-.079 0-.123.044-.123.124V20.72c0 .08.044.124.124.124h2.22c.079 0 .123-.044.123-.124v-4.536c.566 1.025 1.521 2.034 3.237 2.034 2.264 0 3.89-1.955 3.89-4.581s-1.644-4.545-3.908-4.545m-.654 6.986c-1.185 0-2.211-1.167-2.618-2.458.407-1.362 1.344-2.405 2.618-2.405 1.211 0 2.051.92 2.051 2.423s-.84 2.44-2.051 2.44m40.633-6.826h-2.264c-.08 0-.115.017-.15.097l-2.282 5.483-2.29-5.483c-.035-.08-.07-.097-.15-.097h-3.661v-.584c0-.955.645-1.397 1.476-1.397.496 0 1.035.256 1.415.486.089.053.15-.008.115-.088l-.796-1.901a.26.26 0 0 0-.124-.133c-.389-.203-1.025-.38-1.644-.38-1.875 0-2.954 1.432-2.954 3.254v.743h-1.503c-.08 0-.124.044-.124.124v1.768c0 .08.044.124.124.124h1.503v6.668c0 .08.044.123.124.123h2.264c.08 0 .124-.044.124-.123v-6.668h1.936l2.812 6.11-1.512 3.325c-.044.098.009.142.097.142h2.414c.08 0 .116-.018.15-.097l4.997-11.355c.035-.08-.009-.141-.097-.141M54.964 9.04c-2.865 0-4.837 2.025-4.837 4.616 0 2.573 1.971 4.616 4.837 4.616 2.856 0 4.846-2.043 4.846-4.616 0-2.591-1.99-4.616-4.846-4.616m.008 7.065c-1.37 0-2.343-1.043-2.343-2.45 0-1.405.973-2.449 2.343-2.449 1.362 0 2.335 1.043 2.335 2.45 0 1.406-.973 2.45-2.335 2.45m33.541-6.334a1.24 1.24 0 0 0-.483-.471 1.4 1.4 0 0 0-.693-.17q-.384 0-.693.17a1.24 1.24 0 0 0-.484.471q-.174.302-.174.681 0 .375.174.677.175.3.484.471t.693.17.693-.17.483-.471.175-.676q0-.38-.175-.682m-.211 1.247a1 1 0 0 1-.394.39 1.15 1.15 0 0 1-.571.14 1.16 1.16 0 0 1-.576-.14 1 1 0 0 1-.391-.39 1.14 1.14 0 0 1-.14-.566q0-.316.14-.562t.391-.388.576-.14q.32 0 .57.14.253.141.395.39t.142.565q0 .312-.142.56m-19.835-5.78c-.85 0-1.468.6-1.468 1.396s.619 1.397 1.468 1.397c.866 0 1.485-.6 1.485-1.397 0-.796-.619-1.397-1.485-1.397m19.329 5.19a.31.31 0 0 0 .134-.262q0-.168-.132-.266-.132-.099-.381-.099h-.588v1.229h.284v-.489h.154l.374.489h.35l-.41-.518a.5.5 0 0 0 .215-.084m-.424-.109h-.26v-.3h.27q.12 0 .184.036a.12.12 0 0 1 .065.116.12.12 0 0 1-.067.111.4.4 0 0 1-.192.037M69.607 9.252h-2.263c-.08 0-.124.044-.124.124v8.56c0 .08.044.123.124.123h2.263c.08 0 .124-.044.124-.123v-8.56c0-.08-.044-.124-.124-.124m-3.333 6.605a2.1 2.1 0 0 1-1.053.257c-.725 0-1.185-.425-1.185-1.362v-3.484h2.211c.08 0 .124-.044.124-.124V9.376c0-.08-.044-.124-.124-.124h-2.21V6.944c0-.097-.063-.15-.15-.08l-3.954 3.113c-.053.044-.07.088-.07.16v1.007c0 .08.044.124.123.124h1.539v3.855c0 2.087 1.203 3.06 2.918 3.06.743 0 1.46-.194 1.884-.442.062-.035.07-.07.07-.133v-1.68c0-.088-.044-.115-.123-.07"
+                                transform="translate(-0.95,0)"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="home-icon">
+                    <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 24 24" fill="white"
+                        height="28">
+                        <path
+                            d="M13.5 1.515a3 3 0 0 0-3 0L3 5.845a2 2 0 0 0-1 1.732V21a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6h4v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V7.577a2 2 0 0 0-1-1.732z">
+                        </path>
+                    </svg>
+                </div>
+            </div>
+            <div class="search">
+                <div class="search-result">
+                    <div class="search-icon">
+                        <img src="assessts/search.svg" alt="">
+                    </div>
+                    <div class="search-query">
+                        <input type="text" placeholder="What do you want to play?">
+                    </div>
+                </div>
+                <div class="stack">
+                    <img src="assessts/stack.svg" alt="">
+                </div>
+            </div>
+            <div class="login">
+                <div class="support">
+                    <button class="btn">Premium</button>
+                    <button class="btn">Support</button>
+                    <button class="btn">Download</button>
+                </div>
+                <div class="signin">
+                    <div class="btn">
+                        <div class="download">
+                            <svg data-encore-id="icon" role="img" aria-hidden="true" class="e-9960-icon e-9960-baseline"
+                                fill="grey" viewBox="0 0 16 16">
+                                <path
+                                    d="M4.995 8.745a.75.75 0 0 1 1.06 0L7.25 9.939V4a.75.75 0 0 1 1.5 0v5.94l1.195-1.195a.75.75 0 1 1 1.06 1.06L8 12.811l-.528-.528-.005-.005-2.472-2.473a.75.75 0 0 1 0-1.06">
+                                </path>
+                                <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13">
+                                </path>
+                            </svg>
+                            <span>Install App</span>
+                        </div>
+                    </div>
+                    <div class="btn">Sign up</div>
+                    <div class="btn-lg">Log in</div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="section">
+        <aside>
+            <div class="library">
+                <p>Your Library</p>
+                <img src="assessts/plus.svg" alt="plus">
+            </div>
+            <div class="container">
+                <div class="box">
+                    <h3>Create your first playlist</h3>
+                    <p>It's easy, we'll help you</p>
+                    <button class="btn-lg lb-btn">Create playlist</button>
+                </div>
+                <div class="box">
+                    <h3>Let's find some podcasts to follow</h3>
+                    <p>We'll keep you updated on new episodes</p>
+                    <button class="btn-lg lb-btn">Browse podcasts</button>
+                </div>
+            </div>
+            <div class="policy">
+                <div class="item">Legal</div>
+                <div class="item">Safety & Privacy Center</div>
+                <div class="item">Privacy Policy</div>
+                <div class="item">Cookies</div>
+                <div class="item">About Ads</div>
+                <div class="item">Accessbility</div>
+            </div>
+            <div class="lang-switch">
+                <button class="btn">
+                    <img src="assessts/language.svg" alt="">
+                    <span>English</span>
+                </button>
+            </div>
+        </aside>
+        <main>
+            <section class="trendings">
+                <div class="title">
+                    <h2>Trendings songs</h2>
+                    <span>Show all</span>
+                </div>
+                <div class="cards">
+                    <div class="card">
+                        <div class="song-card">
+                            <img src="https://i.scdn.co/image/ab67616d00001e026fbb60d6a7e03ccb940a518e" alt="sapphire">
+                            <button class="play">
+                                <img src="assessts/play.svg" alt="play">
+                            </button>
+                        </div>
+                        <div class="card-title">Sapphire</div>
+                        <div class="card-desc">Ed Sheeran</div>
+                    </div>
+                    <div class="card">
+                        <div class="song-card">
+                            <img src="https://i.scdn.co/image/ab67616d00001e029a5afd03b628b2ba07efdfea"
+                                alt="Mann Ye Mera">
+                            <button class="play">
+                                <img src="assessts/play.svg" alt="play">
+                            </button>
+                        </div>
+                        <div class="card-title">Mann Ye Mera (From "Metro... In Dino")</div>
+                        <div class="card-desc">Pritam, Vishal Mishra, Neelesh Mishra</div>
+                    </div>
+                    <div class="card">
+                        <div class="song-card">
+                            <img src="https://i.scdn.co/image/ab67616d00001e0207298ec5df89ec93d784af05"
+                                alt="chirapunji">
+                            <button class="play">
+                                <img src="assessts/play.svg" alt="play">
+                            </button>
+                        </div>
+                        <div class="card-title">Chirapunji</div>
+                        <div class="card-desc">Nihal Sadiq, Hanan Shaah</div>
+                    </div>
+                    <div class="card">
+                        <div class="song-card">
+                            <img src="https://i.scdn.co/image/ab67616d00001e02e76275da5828d6f937c3bcf3"
+                                alt="jugraafiya">
+                            <button class="play">
+                                <img src="assessts/play.svg" alt="play">
+                            </button>
+                        </div>
+                        <div class="card-title">Jugraafiya - From "Super 30"</div>
+                        <div class="card-desc">Udit Narayan, Shreya Ghosal</div>
+                    </div>
+                    <div class="card">
+                        <div class="song-card">
+                            <img src="https://i.scdn.co/image/ab67616d00001e02c05d5034282ebb1a0d94a26c" alt="shaky">
+                            <button class="play">
+                                <img src="assessts/play.svg" alt="play">
+                            </button>
+                        </div>
+                        <div class="card-title">Shaky</div>
+                        <div class="card-desc">Sanju Rathod, G-SPXRK</div>
+                    </div>
+                </div>
+            </section>
+            <section class="artists">
+                <div class="title">
+                    <h2>Popular artists</h2>
+                    <span>Show all</span>
+                </div>
+                <div class="cards">
+                    <div class="card rnd-card">
+                        <div class="song-card">
+                            <img src="https://i.scdn.co/image/ab67616100005174cb6926f44f620555ba444fca" alt="Pritam">
+                            <button class="play play-rnd">
+                                <img src="assessts/play.svg" alt="play">
+                            </button>
+                        </div>
+                        <div class="card-title">Pritam</div>
+                        <div class="card-desc">Artist</div>
+                    </div>
+                    <div class="card rnd-card">
+                        <div class="song-card">
+                            <img src="https://i.scdn.co/image/ab67616100005174b19af0ea736c6228d6eb539c"
+                                alt="A.R. Rahman">
+                            <button class="play play-rnd">
+                                <img src="assessts/play.svg" alt="play">
+                            </button>
+                        </div>
+                        <div class="card-title">A.R. Rahman</div>
+                        <div class="card-desc">Artist</div>
+                    </div>
+                    <div class="card rnd-card">
+                        <div class="song-card">
+                            <img src="https://i.scdn.co/image/ab676161000051745ba2d75eb08a2d672f9b69b7"
+                                alt="Arjit Singh">
+                            <button class="play
+                            play-rnd">
+                                <img src="assessts/play.svg" alt="play">
+                            </button>
+                        </div>
+                        <div class="card-title">Arjit Singh</div>
+                        <div class="card-desc">Artist</div>
+                    </div>
+                    <div class="card rnd-card">
+                        <div class="song-card">
+                            <img src="https://i.scdn.co/image/ab67616100005174bb4064bef3a825344d5eb79e"
+                                alt="Sachin-Jigar">
+                            <button class="play play-rnd">
+                                <img src="assessts/play.svg" alt="play">
+                            </button>
+                        </div>
+                        <div class="card-title">Sachin-Jigar</div>
+                        <div class="card-desc">Artist</div>
+                    </div>
+                    <div class="card rnd-card">
+                        <div class="song-card">
+                            <img src="https://i.scdn.co/image/ab6761610000517490b6c3d093f9b02aad628eaf"
+                                alt="Vishal-Shekhar">
+                            <button class="play play-rnd">
+                                <img src="assessts/play.svg" alt="play">
+                            </button>
+                        </div>
+                        <div class="card-title">Vishal-Shekhar</div>
+                        <div class="card-desc">Artist</div>
+                    </div>
+                </div>
+            </section>
+            <section class="popular-album">
+                <div class="title">
+                    <h2>Popular albums and singles</h2>
+                    <span>Show all</span>
+                </div>
+                <div class="cards">
+                    <div class="card">
+                        <div class="song-card">
+                            <img src="https://i.scdn.co/image/ab67616d00001e026404721c1943d5069f0805f3"
+                                alt="Aashiqui-2">
+                            <button class="play">
+                                <img src="assessts/play.svg" alt="play">
+                            </button>
+                        </div>
+                        <div class="card-title">Aashiqui 2</div>
+                        <div class="card-desc">
+                            Mithoon, Ankit Tiwari, Jeet Gannguli
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="song-card">
+                            <img src="https://i.scdn.co/image/ab67616d00001e02707ea5b8023ac77d31756ed4" alt="yjhd">
+                            <button class="play">
+                                <img src="assessts/play.svg" alt="play">
+                            </button>
+                        </div>
+                        <div class="card-title">Yeh Jawaani Hai Deewani</div>
+                        <div class="card-desc">
+                            Pritam
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="song-card">
+                            <img src="https://i.scdn.co/image/ab67616d00001e02711c1639b4bc0f9978ae77a6"
+                                alt="sanam-teri-kasam">
+                            <button class="play">
+                                <img src="assessts/play.svg" alt="play">
+                            </button>
+                        </div>
+                        <div class="card-title">Sanam Teri Kasam (Original Motion...</div>
+                        <div class="card-desc">
+                            Himesh Reshammiya, Sameer Anjaan, Subrat...
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="song-card">
+                            <img src="https://i.scdn.co/image/ab67616d00001e0283141000ee8ce3b893a0b425"
+                                alt="finding-her">
+                            <button class="play">
+                                <img src="assessts/play.svg" alt="play">
+                            </button>
+                        </div>
+                        <div class="card-title">Finding Her</div>
+                        <div class="card-desc">
+                            Kushagra, Bharath, Saaheal
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="song-card">
+                            <img src="https://i.scdn.co/image/ab67616d00001e02a5183fa4b99bcec1f506418d"
+                                alt="young-goat">
+                            <button class="play">
+                                <img src="assessts/play.svg" alt="play">
+                            </button>
+                        </div>
+                        <div class="card-title">Young G.O.A.T</div>
+                        <div class="card-desc">
+                            Cheema Y, Gur Sidhu
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="popular-radio">
+                <div class="title">
+                    <h2>Popular radio</h2>
+                    <span>Show all</span>
+                </div>
+                <div class="cards">
+                    <div class="card">
+                        <div class="song-card">
+                            <img src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/4YRxDV8wJFPHPTeXepOstw/en-GB"
+                                alt="arjitSingh">
+                            <button class="play">
+                                <img src="assessts/play.svg" alt="play">
+                            </button>
+                        </div>
+                        <div class="card-desc">
+                            With Sachin-Jigar, Amit Trivedi, Atif Aslam and...
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="song-card">
+                            <img src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/4fEkbug6kZzzJ8eYX6Kbbp/en-GB"
+                                alt="kk">
+                            <button class="play">
+                                <img src="assessts/play.svg" alt="play">
+                            </button>
+                        </div>
+                        <div class="card-desc">
+                            With Pritam, Mustafa Zahid, Atif Aslam and...
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="song-card">
+                            <img src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/0oOet2f43PA68X5RxKobEy/en-GB"
+                                alt="shreya">
+                            <button class="play">
+                                <img src="assessts/play.svg" alt="play">
+                            </button>
+                        </div>
+                        <div class="card-desc">
+                            With A.R. Rahaman, Atif Aslam, Ajay-Atul and...
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="song-card">
+                            <img src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/3gBKY0y3dFFVRqicLnVZYz/en-GB"
+                                alt="alka">
+                            <button class="play">
+                                <img src="assessts/play.svg" alt="play">
+                            </button>
+                        </div>
+                        <div class="card-desc">
+                            With Vinod Rathod, Kumar Sanu, Udit...
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="song-card">
+                            <img src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/2FKWNmZWDBZR4dE5KX4plR/en-GB"
+                                alt="diljit">
+                            <button class="play">
+                                <img src="assessts/play.svg" alt="play">
+                            </button>
+                        </div>
+                        <div class="card-desc">
+                            With Karan Aujla, Shubh, AP Dhillon an...
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="featured-charts">
+                <div class="title">
+                    <h2>Featured Charts</h2>
+                    <span>Show all</span>
+                </div>
+                <div class="cards">
+                    <div class="card">
+                        <div class="song-card">
+                            <img src="assessts/card1img.jpeg" alt="top-songs-global-weekly">
+                            <button class="play">
+                                <img src="assessts/play.svg" alt="play">
+                            </button>
+                        </div>
+                        <div class="card-desc">
+                            Your weekly update of the most played...
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="song-card">
+                            <img src="assessts/card2img.jpeg" alt="top-songs-india-weekly">
+                            <button class="play">
+                                <img src="assessts/play.svg" alt="play">
+                            </button>
+                        </div>
+                        <div class="card-desc">
+                            Your weekly update of the most played...
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="song-card">
+                            <img src="https://charts-images.scdn.co/assets/locale_en/regional/daily/region_global_default.jpg"
+                                alt="gloabl-daily">
+                            <button class="play">
+                                <img src="assessts/play.svg" alt="play">
+                            </button>
+                        </div>
+                        <div class="card-desc">
+                            Your daily update of the most played...
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="song-card">
+                            <img src="https://charts-images.scdn.co/assets/locale_en/regional/daily/region_in_default.jpg"
+                                alt="india-daily">
+                            <button class="play">
+                                <img src="assessts/play.svg" alt="play">
+                            </button>
+                        </div>
+                        <div class="card-desc">
+                            Your daily update of the most played...
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="song-card">
+                            <img src="https://charts-images.scdn.co/assets/locale_en/viral/daily/region_global_default.jpg"
+                                alt="viral-card">
+                            <button class="play">
+                                <img src="assessts/play.svg" alt="play">
+                            </button>
+                        </div>
+                        <div class="card-desc">
+                            Your daily update of the most viral tracks...
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="india-best">
+                <div class="title">
+                    <h2>India's Best</h2>
+                    <span>Show all</span>
+                </div>
+                <div class="cards">
+                    <div class="card">
+                        <div class="song-card">
+                            <img src="https://i.scdn.co/image/ab67706f0000000212de63da371d63aba8c212aa"
+                                alt="i-pop-icon">
+                            <button class="play">
+                                <img src="assessts/play.svg" alt="play">
+                            </button>
+                        </div>
+                        <div class="card-desc">Hottest tracks from your favourite I-pop...</div>
+                    </div>
+                    <div class="card">
+                        <div class="song-card">
+                            <img src="https://i.scdn.co/image/ab67706f00000002ac1d414165e3fb3a94f7fc18"
+                                alt="bollywood-central">
+                            <button class="play">
+                                <img src="assessts/play.svg" alt="play">
+                            </button>
+                        </div>
+                        <div class="card-desc">Bollywood Central, jab baje toh seedha...</div>
+                    </div>
+                    <div class="card">
+                        <div class="song-card">
+                            <img src="https://i.scdn.co/image/ab67706f0000000259e9e0d595885276ccf780e6" alt="punjabi">
+                            <button class="play">
+                                <img src="assessts/play.svg" alt="play">
+                            </button>
+                        </div>
+                        <div class="card-desc">It's time for some real talk.</div>
+                    </div>
+                    <div class="card">
+                        <div class="song-card">
+                            <img src="https://i.scdn.co/image/ab67706f00000002a617ef74e226120373bb6463" alt="rap91">
+                            <button class="play">
+                                <img src="assessts/play.svg" alt="play">
+                            </button>
+                        </div>
+                        <div class="card-desc">India's Rap Scene. Cover - Emiway Bantai</div>
+                    </div>
+                    <div class="card">
+                        <div class="song-card">
+                            <img src="https://i.scdn.co/image/ab67706f00000002ed9af7974cb083220f850e72"
+                                alt="kollywood-cream">
+                            <button class="play">
+                                <img src="assessts/play.svg" alt="play">
+                            </button>
+                        </div>
+                        <div class="card-desc">Finest collection of Tamil Music from the...</div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="sep"></div>
+
+
+            <section class="extra">
+                <div class="cell">
+                    <h4>Company</h4>
+                    <span>About</span>
+                    <span>Jobs</span>
+                    <span>For the Record</span>
+                </div>
+                <div class="cell">
+                    <h4>Communities</h4>
+                    <span>For Artists</span>
+                    <span>Developers</span>
+                    <span>Advertising</span>
+                    <span>Investors</span>
+                    <span>Vendors</span>
+                </div>
+                <div class="cell">
+                    <h4>Useful links</h4>
+                    <span>Support</span>
+                    <span>Free Mobile App</span>
+                    <span>Popular by Country</span>
+                </div>
+                <div class="cell">
+                    <h4>Spotify Plans</h4>
+                    <span>Premium Individual</span><span>Premium Duo</span><span>Premium Family</span><span>Premium
+                        Student</span><span>Spotify Free</span>
+                </div>
+                <div class="social-media">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="15" width="15" viewBox="0 0 448 512"
+                                    fill="white">
+                                    <path
+                                        d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="15" width="15" viewBox="0 0 512 512"
+                                    fill="white">
+                                    <path
+                                        d="M459.4 151.7c.3 4.5 .3 9.1 .3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53 51.7 63.7 129.3 105.3 216.4 109.8-1.6-7.8-2.6-15.9-2.6-24 0-57.8 46.8-104.9 104.9-104.9 30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="15" width="15" viewBox="0 0 512 512"
+                                    fill="white">
+                                    <path
+                                        d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="sep"></div>
+
+            <div class="copyright">
+                &copy; 2025 Spotify AB
+            </div>
+        </main>
+    </section>
+    <footer>
+        <div class="advertisment">
+            <h5>Preview of Spotify</h5>
+            <span>Sign up to get unlimited songs and podcasts with occassional ads. No credit card needed.</span>
+        </div>
+        <div>
+            <button class="btn-lg btn-footer">Sign up for free</button>
+        </div>
+    </footer>
+</body>
+
+</html>

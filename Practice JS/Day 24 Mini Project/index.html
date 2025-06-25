@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://freesimon.org/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div>
+        <button id="start-button">Start game</button>
+    </div>
+    <main>
+        <h1 class="game-title">Simon Game</h1>
+        <h2 class="end">Level 0</h2>
+        <div class="container disabled">
+            <div class="btn-container">
+                <div class="line-one">
+                    <div class="btn red" type="button" id="red"></div>
+                    <div class="btn orange" type="button" id="orange"></div>
+                </div>
+                <div class="line-two">
+                    <div class="btn green" type="button" id="green"></div>
+                    <div class="btn blue" type="button" id="blue"></div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="scoreboard">
+            <div class="score current-score">Current Score: <span id="current-score">0</span></div>
+            <div class="score high-score">High Score: <span id="high-score">0</span></div>
+        </div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

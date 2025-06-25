@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#mainImg {
+    width: 35%;
+}
+
+.box {
+    background-color: lightgrey;
+    width: 200px;
+    padding: 1rem;
+    border: 0.25px solid black;
+}
+
+.boxLink {
+    text-decoration: none;
+}
+
+.box ul {
+    margin-left: 25px;
+}
+
+#description {
+    background-color: antiquewhite;
+}
+
+.images {
+    display: flex;
+    gap: 1rem;
+}
+
+.oldImg {
+    width: 200px;
+    height: 200px;
+    margin-right: 1rem;
+}
+
+.green {
+    color: green;
+}
+
+.underline {
+    text-decoration: underline black wavy;
+}

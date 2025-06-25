@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic To Do</title>
+    <style>
+        .delete {
+            width: 1.2rem;
+            background: transparent;
+            border: none;
+            text-align: center;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .delete:hover {
+            background-color: red;
+            height: 1.2rem;
+            border-radius: 50%;
+            color: white;
+        }
+
+        ul {
+            background-color: wheat;
+            padding: 1rem;
+        }
+
+        ul li {
+            list-style-type: none;
+            border-bottom: solid;
+            margin-bottom: 0.5rem;
+            line-height: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>To Do</h1>
+
+    <input type="text" placeholder="Enter your task">
+    <button>Add task</button>
+
+    <ul>
+        <h2>Added tasks:</h2>
+        <li>
+            DSA
+            <button class="delete">X</button>
+        </li>
+        <li>
+            JS complete
+            <button class="delete">X</button>
+        </li>
+    </ul>
+
+    <script src="todo.js"></script>
+</body>
+</html>
