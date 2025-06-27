@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback Hell and Promises</title>
+    <style>
+        body {
+            background-color: rgb(161, 188, 212);
+        }
+
+        .btn {
+            background: transparent;
+            border: none;
+            background-color: grey;
+            color: yellow;
+            padding: 0.3rem 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        #result {
+            font-size: 1.5rem;
+        }
+
+        .size {
+            width: 175px;
+            height: 175px;
+            margin-top: 1rem;
+        }
+
+        .search {
+            background-color: white;
+            color: black;
+        }
+
+        ul {
+            background-color: wheat;
+            padding: 1rem;
+        }
+
+        ul li {
+            list-style-type: none;
+            border-bottom: solid;
+            margin-bottom: 0.5rem;
+            line-height: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Random Things</h1>
+
+    <h2>Random Cat Fact</h2>
+    <button class="btn" id="cat-btn">Show new fact</button>
+    <p id="cat-fact">---Random Cat Fact---</p>
+
+    <h2>Random Joke</h2>
+    <button class="btn" id="joke-btn">Show Joke</button>
+    <p id="joke">---Random Joke---</p>
+
+    <h2>Random Dog Image</h2>
+    <button class="btn" id="dog-btn">Show Image</button>
+    <div id="dog-img-container"></div>
+
+    <h1>Universities List</h1>
+
+    <input type="text" value="India">
+    <button class="btn search" id="clg-btn">Search</button>
+    <div class="clg-lst-container"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.10.0/axios.min.js"
+        integrity="sha512-WkZrEcQ5LMyNy6Y2PQf+Tu3vMcsmKKRKuPXtJSTHQJ3mpuvLRlA5dlDDhrrcXfyWr6Z/y3wIMfjfqVFO/gDZYQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="promisesDemo.js"></script>
+    <script src="api.js"></script>
+</body>
+
+</html>
