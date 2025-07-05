@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        button {
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>The total number of users are <%= count %> </h1>
+    <form action="/users/new">
+        <button>Join us today!</button>
+    </form>
+    <form method="get" action="/users">
+        <button>Click to show users</button>
+    </form>
+</body>
+</html>

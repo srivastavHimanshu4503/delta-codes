@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show users</title>
+    <style>
+        tr, td, th {
+            border: 2px solid black;
+        }
+        button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to our society!</h1>
+
+    <h2>Our Users</h2>
+    <table border="black">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th colspan="2">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <% for(let user of users) { %>
+                <tr>
+                    <td>
+                        <%= user.id %>
+                    </td>
+                    <td>
+                        <%= user.username %>
+                    </td>
+                    <td>
+                        <%= user.email %>
+                    </td>
+                    <td>
+                        <form method="GET" action="/users/<%= user.id %>/edit">
+                            <button>Edit Username</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form method="GET" action="/users/<%= user.id %>/delete">
+                            <button>Delete User</button>
+                        </form>
+                    </td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</body>
+</html>
