@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update user</title>
+    <style>
+        div {
+            margin: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <form action="/chats/<%= chat._id %>?_method=PATCH" method="post">
+        <div>
+            <label for="from">Sender: </label>
+            <input type="text" id="from" value="<%= chat.from %>" disabled>
+        </div>
+        <div>
+            <label for="msg">Enter message:</label>
+            <br>
+            <textarea name="message" id="msg"><%= chat.message %></textarea>
+        </div>
+        <div>
+            <label for="to">Receiver: </label>
+            <input type="text" id="to" value="<%= chat.to %>" disabled>
+        </div>
+        <div>
+            <button>Update</button>
+        </div>
+    </form>
+</body>
+</html>

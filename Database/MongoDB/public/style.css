@@ -1,0 +1,41 @@
+.chat {
+    padding: 1rem 2rem;
+    margin: 2rem;
+    border-radius: 2rem;
+    background-color: aliceblue;
+}
+
+.msg {
+    padding: 0.8rem 1.2rem;
+    border-radius: 1rem;
+    background-color: lightseagreen;
+    color: white;
+    display: inline-block;
+}
+
+.add-user {
+    background-color: antiquewhite;
+    padding: 1rem;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+button{
+    border-radius: 1rem;
+    padding: 0.5rem 0.9rem;
+    cursor: pointer;
+}
+
+.del {
+    background-color: red;
+    color: white;
+}
+
+.add {
+    background-color: seagreen;
+    color: white;
+}
