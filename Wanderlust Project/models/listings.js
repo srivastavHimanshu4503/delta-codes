@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const Review = require("./reviews.js");
 
 const listingSchema = new mongoose.Schema({
   title: {
@@ -7,19 +8,28 @@ const listingSchema = new mongoose.Schema({
   },
   description: String,
   image: {
-    type: String,
-    default:
-      "https://images.unsplash.com/photo-1585171808765-f74d97158cb2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cmFuZG9tJTIwdmlsbGF8ZW58MHx8MHx8fDA%3D",
-    set: (v) =>
-      v === ""
-        ? "https://images.unsplash.com/photo-1585171808765-f74d97158cb2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cmFuZG9tJTIwdmlsbGF8ZW58MHx8MHx8fDA%3D"
-        : v,
+    url: String,
+    filename: String
   },
   price: Number,
   location: String,
   country: String,
+  reviews: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Review",
+    },
+  ],
+  owner: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User"
+  }
 });
 
 const Listing = mongoose.model("Listing", listingSchema);
+
+listingSchema.post("findOneAndDelete", async (deletedListing) => {
+  await Review.deleteMany({ _id: { $in: deletedListing.reviews } });
+});
 
 module.exports = Listing;
